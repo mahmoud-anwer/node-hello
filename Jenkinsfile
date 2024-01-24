@@ -7,10 +7,10 @@ pipeline {
         GITHUB_TOKEN = credentials('mahmoudanwer_github_token')
         GITHUB_USERNAME = "mahmoud-anwer"
         REPO_OWNER = "mahmoud-anwer"
-        REPO_NAME = "node-hello"
-        TARGET_DIRECTORY = "node-hello-dir"
+        REPO_NAME = "k8s-application-config"
+        TARGET_DIRECTORY = "k8s-config"
         SERVICE_NAME = "api"
-        BASE_BRANCH = "master"
+        BASE_BRANCH = "main"
     }
     
     stages {
