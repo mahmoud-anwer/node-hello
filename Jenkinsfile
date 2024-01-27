@@ -17,7 +17,9 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                cloneRepo(github_username: env.GITHUB_USERNAME, github_token: env.GITHUB_TOKEN, repo_owner: env.REPO_OWNER, repo_name: env.REPO_NAME, target_dir: env.TARGET_DIRECTORY)  
+                sh """
+                    echo "Clone Repository"
+                """
             }
         }
         stage('Editing files') {
@@ -32,7 +34,9 @@ pipeline {
         }
         stage('Creating pull request') {
             steps {
-                createPR(base_branch: env.BASE_BRANCH, target_dir: env.TARGET_DIRECTORY, service_name: env.SERVICE_NAME, build_id: env.BUILD_ID, commit_hash: env.GIT_COMMIT, github_username: env.GITHUB_USERNAME, github_token: env.GITHUB_TOKEN, repo_owner: env.REPO_OWNER, repo_name: env.REPO_NAME)  
+                 sh """
+                    echo "Creating pull request"
+                """
             }
         }
     }
