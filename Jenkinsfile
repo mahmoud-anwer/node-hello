@@ -4,13 +4,6 @@ pipeline {
     agent any
 
     environment {
-        GITHUB_TOKEN = credentials('mahmoudanwer_github_token')
-        GITHUB_USERNAME = "mahmoud-anwer"
-        REPO_OWNER = "mahmoud-anwer"
-        REPO_NAME = "k8s-application-config"
-        TARGET_DIRECTORY = "k8s-config"
-        SERVICE_NAME = "api"
-        BASE_BRANCH = "main"
         newTag = "${env.GIT_COMMIT}"
     }
     
@@ -26,7 +19,6 @@ pipeline {
             steps {
                 script{
                     sh """
-                    echo "test" > ${TARGET_DIRECTORY}/test.file
                     echo "---- ${newTag}"
                     """
                 }
