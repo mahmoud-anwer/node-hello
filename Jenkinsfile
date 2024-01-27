@@ -11,6 +11,7 @@ pipeline {
         TARGET_DIRECTORY = "k8s-config"
         SERVICE_NAME = "api"
         BASE_BRANCH = "main"
+        newTag = "${env.GIT_COMMIT}"
     }
     
     stages {
@@ -24,6 +25,7 @@ pipeline {
                 script{
                     sh """
                     echo "test" > ${TARGET_DIRECTORY}/test.file
+                    echo "---- ${newTag}"
                     """
                 }
             }
